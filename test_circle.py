@@ -15,6 +15,9 @@ from circle import Circle
 class TestCircle(unittest.TestCase):
     """ Tests of Circle class"""
 
+    def test_positive_add_area(self):
+        pass
+
     def test_circle_constructor(self):
         with self.assertRaises(ValueError):
             Circle(-1)
