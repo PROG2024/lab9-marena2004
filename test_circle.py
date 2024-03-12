@@ -16,7 +16,13 @@ class TestCircle(unittest.TestCase):
     """ Tests of Circle class"""
 
     def test_positive_add_area(self):
+        circle1 = Circle(5)
+        circle2 = Circle(7)
+
+
+    def test_zero_radius(self):
         pass
+        # self.assertEqual(Circle.radius(), 0)
 
     def test_circle_constructor(self):
         with self.assertRaises(ValueError):

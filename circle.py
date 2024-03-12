@@ -4,6 +4,20 @@ import math
 
 class Circle:
 
+    """
+    >>> circle1 = Circle(3)
+    >>> circle2 = Circle(4)
+    >>> combined_circle = circle1.add_area(circle2)
+    >>> combined_circle.get_radius()
+    5.0
+
+    >>> try:
+    ...     Circle(-2)
+    ... except ValueError as e:
+    ...     str(e)
+    'radius must be non-negative'
+    """
+
     def __init__(self, radius):
         """Initialize a circle with given radius.
         
