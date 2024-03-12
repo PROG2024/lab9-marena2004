@@ -13,13 +13,10 @@ from circle import Circle
 
 
 class TestCircle(unittest.TestCase):
-    """ Tests of Circle class"""
-
-    def set_up(self):
-        """set up for test circle"""
+    """ Tests of the Circle class"""
 
     def test_positive_add_area(self):
-        """Test add_area with two circles having positive radii."""
+        """Test add_area with two circles having positive radius."""
         self.circle1 = Circle(3)
         self.circle2 = Circle(4)
         combined_circle = self.circle1.add_area(self.circle2)
@@ -27,6 +24,7 @@ class TestCircle(unittest.TestCase):
         self.assertAlmostEqual(combined_circle.get_area(), 78.53981633974483)
 
     def test_zero_radius(self):
+        """ Test add_area where one circle has radius 0."""
         self.circle1 = Circle(0)
         self.circle2 = Circle(6)
         combined_circle = self.circle1.add_area(self.circle2)
@@ -34,5 +32,6 @@ class TestCircle(unittest.TestCase):
         self.assertAlmostEqual(combined_circle.get_area(), 113.09733552923255)
 
     def test_circle_constructor(self):
+        """ Test for circle constructor"""
         with self.assertRaises(ValueError):
             Circle(-1)
