@@ -1,4 +1,4 @@
-"""A singleton counter.
+"""A g.
 
    counter = Counter()  get a reference to the counter. Initial count is 0.
    counter.count        property returns the current count
@@ -26,6 +26,6 @@ class Counter:
     def count(self):
         return self.__count
 
-    # TODO write increment method
     def increment(self):
-        pass
+        self.__count += 1
+        return self.__count
