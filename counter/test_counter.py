@@ -11,13 +11,19 @@
 import unittest
 from counter import Counter
 
+
 class TestCounter(unittest.TestCase):
 
+    def setUp(self):
+        self.counter1 = Counter()
+        self.counter2 = Counter()
+
     def test_share_same_count(self):
-        pass
+        self.counter1.increment()
+        self.assertEqual(self.counter1, self.counter2)
 
     def test_counter_is_singleton(self):
-        pass
+        self.assertIs(self.counter1, self.counter2)
 
     def test_not_reset_to_zero(self):
         pass
