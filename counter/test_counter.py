@@ -26,4 +26,7 @@ class TestCounter(unittest.TestCase):
         self.assertIs(self.counter1, self.counter2)
 
     def test_not_reset_to_zero(self):
-        pass
+        self.counter1.increment()
+        new_counter = Counter()
+        self.assertEqual(self.counter1.count, new_counter.count)
+
