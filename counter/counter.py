@@ -10,14 +10,15 @@
 """
 
 
-# purpose -> to count every time you call next it will return the next count
-
 class Counter:
+    _instance = None
 
-    __instance = None
-
-    def __init__(self):
-        self.__count = 0
+    def __new__(cls, *args, **kwargs):
+        # check if the _instance attribute is None
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)  # new instance created
+            cls._instance.__count = 0  # initial count = 0
+        return cls._instance
 
     def __str__(self):
         return f"{self.__count}"
