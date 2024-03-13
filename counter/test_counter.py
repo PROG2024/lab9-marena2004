@@ -7,3 +7,17 @@
 
    You can use pytest or unittest.
 """
+
+import unittest
+from counter import Counter
+
+class TestCounter(unittest.TestCase):
+
+    def test_share_same_count(self):
+        pass
+
+    def test_counter_is_singleton(self):
+        pass
+
+    def test_not_reset_to_zero(self):
+        pass
