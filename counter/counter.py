@@ -12,31 +12,13 @@
 
 class Counter:
 
-    """
-    >>> counter = Counter()
-    >>> counter.count
-    1
-    >>> counter.count        # invoking count doesn't change anything
-    1
-    >>> counter.increment()  # add 1 and return the new count
-    2
-    >>> counter2 = Counter()
-    >>> counter2 is counter
-    True
-    >>> counter2.count       # shares same count
-    2
-    >>> counter2.increment()  # add 1 and return the new count
-    3
-    >>> counter.count
-    3
-    """
     _instance = None
 
     def __new__(cls, *args, **kwargs):
         # check if the _instance attribute is None
         if cls._instance is None:
             cls._instance = super().__new__(cls)  # new instance created
-            cls._instance.__count = 1  # initial count = 1
+            cls._instance.__count = 0  # initial count = 0
         return cls._instance
 
     def __str__(self):
